@@ -1,2 +1,38 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<%# <h1>Lists#show</h1>
+<p>Find me in app/views/lists/show.html.erb</p> %>
+
+      <p>The list is empty !</p>
+    <% else%>
+      <div class="container">
+        <div class="row">
+          <%@list.movies.each do |movie|%>
+            <div class="card m-4 shadow col-3" style="width: 18rem;">
+              <img class="card-img-top" src="<%=movie.poster_url%>" alt="Card image cap" style="height: 200px; object-fit: cover">
+        <%@list.movies.each do |movie|%>
+          <div class="d-flex flex-row justify-content-between">
+            <div class="card shadow col-3" style="width: 18rem;">
+              <img class="card-img-top mt-2" src="<%=movie.poster_url%>" alt="Card image cap" style="height: 200px; object-fit: cover">
+              <div class="card-body">
+                <h3><%= movie.title%></h3>
+                <p class="card-text"><%= movie.overview%></p>
+                <div class="text-end">
+                  <p>Rating: <%= movie.rating %> <i class="fa-solid fa-star text-warning"></i></p>
+                </div>
+                <h3><%= movie.title %></h3>
+                <p class="card-text"><%= movie.overview %></p>
+              </div>
+            </div>
+          <%end%>
+        </div>
+            <div style="width: 40%">
+              <h4>Reviews : </h4>
+              <ul class="list-group" >
+                <li class="list-group-item"><%=@list.bookmarks[@list.movies.index(movie)].comment%></li>
+
+              </ul>
+            </div>
+          </div>
+        <%end%>
+      </div>
+    <%end%>
+  </div>

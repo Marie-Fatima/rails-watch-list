@@ -19,5 +19,4 @@ Rails.application.routes.draw do
     delete "bookmarks/:id", to: "bookmarks#destroy"
   # resources :movies
 
-
 end

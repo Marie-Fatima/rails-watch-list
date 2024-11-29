@@ -1,2 +1,10 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<%# <h1>Lists#new</h1>
+<p>Find me in app/views/lists/new.html.erb</p> %>
+
+<div class="card bg-light shadow" style="width: 50%; margin: auto; padding: 50px; margin-top: 50px">
+  <%= simple_form_for @list do |l|%>
+    <%= l.input :name%>
+    <%= l.input :photo, as: :file %>
+    <%= l.button :submit, class: "btn btn-success"%>
+  <%end%>
+</div>
